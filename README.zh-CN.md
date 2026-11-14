@@ -45,6 +45,7 @@ services:
       - --retentionPeriod=90d
       - --retention.maxDiskSpaceUsageBytes=50GiB
       - --httpListenAddr=:9428
+      - --insert.maxLineSizeBytes=2MB
     ports:
       - "127.0.0.1:9428:9428"
     volumes:
@@ -64,6 +65,8 @@ networks:
 ```
 
 `api_shared_net` 必须是 new-api 容器已经加入的 Docker 网络。网络名不同时，请同时修改这里和插件里的写入地址。创建数据目录并启动：
+
+`--insert.maxLineSizeBytes=2MB` 把 VictoriaLogs 默认的 256 KiB 行上限提高。这个上限包含结尾换行，必须高于插件 1 MiB 的写入上限；VictoriaLogs 本身仍会拒绝超过 2 MB 的单条记录。
 
 ```bash
 mkdir -p /www/dk_project/dk_app/victorialogs/data

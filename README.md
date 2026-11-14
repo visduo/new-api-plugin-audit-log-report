@@ -46,6 +46,7 @@ services:
       - --retentionPeriod=90d
       - --retention.maxDiskSpaceUsageBytes=50GiB
       - --httpListenAddr=:9428
+      - --insert.maxLineSizeBytes=2MB
     ports:
       - "127.0.0.1:9428:9428"
     volumes:
@@ -65,6 +66,8 @@ networks:
 ```
 
 `api_shared_net` must be the Docker network the new-api container has already joined. If your network has another name, change it here and use the same name in the plugin endpoint. Create the data directory and start the container:
+
+`--insert.maxLineSizeBytes=2MB` raises VictoriaLogs' 256 KiB default. The flag counts the trailing newline, so it must stay above the plugin's 1 MiB payload limit. VictoriaLogs still rejects any single record above 2 MB.
 
 ```bash
 mkdir -p /www/dk_project/dk_app/victorialogs/data
