@@ -6,7 +6,7 @@ const FETCH_BODY_LIMIT = 1048576;
 
 export const meta = {
     apiVersion: 1,
-    key: "visduo_audit-report",
+    key: "visduo_audit-log-report",
     name: { en: "Audit Report", zh: "请求审计报告" },
     description: {
         en: "Writes request bodies and optional model responses to VictoriaLogs for auditing",
