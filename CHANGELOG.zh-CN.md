@@ -1,6 +1,6 @@
 ---
 changelogVersion: 1
-plugin: "visduo_audit-report"
+plugin: "visduo_audit-log-report"
 version: "1.2.0"
 locale: "zh-CN"
 ---
