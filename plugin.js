@@ -12,9 +12,9 @@ export const meta = {
         en: "Writes request bodies and optional model responses to VictoriaLogs for auditing",
         zh: "将请求正文和可选的模型响应写入 VictoriaLogs，用于审计",
     },
-    version: "1.2.0",
+    version: "1.3.0",
     author: { name: "多栈科技" },
-    website: "https://ais.6os.net/",
+    website: "https://www.6os.net/",
     optional: true,
     configSchema: {
         type: "object",

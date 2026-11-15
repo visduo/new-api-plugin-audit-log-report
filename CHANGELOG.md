@@ -1,15 +1,15 @@
 ---
 changelogVersion: 1
 plugin: "visduo_audit-log-report"
-version: "1.2.0"
+version: "1.3.0"
 locale: "en"
 translations:
   zh-CN: CHANGELOG.zh-CN.md
 ---
 # Changelog
 
-## [1.2.0]
+## [1.3.0]
 
-### Fixed
+### Changed
 
-- Make the plugin metadata readable by the marketplace by using only literal values and a description within the length limit.
+- Use `https://www.6os.net/` as the plugin website.
